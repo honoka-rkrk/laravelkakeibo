@@ -15,3 +15,5 @@ use App\Http\Controllers\ExpenceController;
 */
 
 Route::get('/kakeibo/{id}/expences',[ExpenceController::class,'index'])->name('expences.index');
+Route::get('/kakeibo/{id}/expences/create',[ExpenceController::class,'showCreateForm'])->name('tasks.create');
+Route::post('/kakeibo/{id}/expences/create',[ExpenceController::class,'create']);

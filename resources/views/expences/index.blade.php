@@ -18,7 +18,7 @@
                 <div class="card-body">
                     <!-- テーブル表の定義 -->
                     <div class="table-responsive">
-                        <table width="100%" class="table table-striped table-bordered table-hover">
+                        <table id=kakeibo_list width="100%" class="table table-striped table-bordered table-hover">
 
                             <!-- 表の列の定義-->
                             <thead>
@@ -34,10 +34,10 @@
 
                             <!-- 表のデータ部分の表示-->
                             <tbody>
-                                @foreach ($expences as $expence)
+                                @foreach ($expences as $index => $expence)
                                     <tr class="odd gradeX text-center">
                                         <td class="text-center" width="100">{{ $expence->formatted_write_date }}</td>
-                                        <td class="text-center" width="100">{{ $expence->category_id }}</td>
+                                        <td class="text-center" width="100">{{ $category[$index] }}</td>
                                         <td class="text-center" width="140">{{ $expence->money }}</td>
                                         <td class="text-center" width="140">{{ $expence->memo }}</td>
                                     </tr>
